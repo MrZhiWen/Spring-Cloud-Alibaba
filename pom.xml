@@ -17,8 +17,11 @@
         </dependencies>
     </dependencyManagement>
     <modules>
-        <module>spring-cloud-alibaba-consumer</module>
-        <module>spring-cloud-alibaba-provider</module>
+        <module>Nacos/spring-cloud-alibaba-consumer</module>
+        <module>Nacos/spring-cloud-alibaba-provider</module>
+        <module>Dubbo/spring-cloud-alibaba-dubbo-consumer</module>
+        <module>Dubbo/spring-cloud-alibaba-dubbo-provider</module>
+
     </modules>
     <build>
         <plugins>

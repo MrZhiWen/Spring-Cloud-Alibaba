@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: prod
+  application:
+    name: spring-cloud-alibaba-consumer
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        namespace: 95d3a1d6-4df6-4814-b049-dd3737ca131c
