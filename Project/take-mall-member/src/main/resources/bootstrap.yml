@@ -1,0 +1,9 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: take-mall-member
+  profiles:
+    active: '@environment@'
+  main:
+    allow-bean-definition-overriding: true

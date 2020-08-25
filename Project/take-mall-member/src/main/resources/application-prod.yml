@@ -1,0 +1,61 @@
+# mybatis plus 配置
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.mall.common.module.**.bean
+  typeEnumsPackage: com.mall.common.module.**.enums
+  type-aliases-super-type: java.lang.Object
+  # 原生配置
+  configuration:
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 驼峰下划线转换
+    map-underscore-to-camel-case: true
+    # 配置的缓存的全局开关
+    cache-enabled: false
+    # 延时加载的开关
+    lazy-loading-enabled: true
+    # 开启的话，延时加载一个属性时会加载该对象全部属性，否则按需加载属性
+    multiple-result-sets-enabled: true
+    use-generated-keys: true
+    default-statement-timeout: 60
+    default-fetch-size: 100
+  global-config:
+    # 数据库相关配置
+    db-config:
+      #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: auto
+#      #全局表名前缀
+#      table-prefix: tb_
+      #字段策略 IGNORED:"忽略判断",NOT_NULL:"非 NULL 判断"),NOT_EMPTY:"非空判断"
+      field-strategy: NOT_NULL
+      #驼峰下划线转换
+      column-underline: true
+      #数据库大写下划线转换
+      #capital-mode: true
+      #逻辑删除配置
+      logic-delete-value: N
+      logic-not-delete-value: Y
+      db-type: mysql
+      #刷新mapper 调试神器
+      refresh: true
+# 日志路径
+log:
+  level: debug
+  path: /Users/limr/logs/member/
+
+spring:
+  mail:
+    host: smtp.lppz.com
+    username: b2c-mall@lppz.com
+    password: Lppz@888
+  thymeleaf:
+    check-template-location: true
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+  swagger:
+    enabled: true
+    basePackage: com.mall.member
+    title: 会员服务,接口文档

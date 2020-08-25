@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mall.common.module.member.mapper.SysUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.mall.common.module.member.bean.SysUser">
+        <id column="user_id" property="userId" />
+        <result column="login_name" property="loginName" />
+        <result column="user_name" property="userName" />
+        <result column="password" property="password" />
+        <result column="valid" property="valid" />
+        <result column="limited_ip" property="limitedIp" />
+        <result column="expired_time" property="expiredTime" />
+        <result column="last_change_pwd_time" property="lastChangePwdTime" />
+        <result column="limit_multi_login" property="limitMultiLogin" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        user_id, login_name, user_name, password, valid, limited_ip, expired_time, last_change_pwd_time, limit_multi_login, create_time, update_time
+    </sql>
+
+    <select id="selectFindById" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT  * FROM  sys_user WHERE user_id =#{id,jdbcType=INTEGER}
+    </select>
+
+    <select id="getSysUserList" resultType="com.mall.common.module.member.bean.SysUser"></select>
+
+</mapper>

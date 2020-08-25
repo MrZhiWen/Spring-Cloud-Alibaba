@@ -1,0 +1,29 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 121.36.39.3:8848
+        group: DEFAULT_GROUP
+      config:
+        timeout: 100000
+        server-addr: 121.36.39.3:8848
+        file-extension: yaml
+        encode: UTF-8
+        extension-configs:
+          - data-id: config-mysql.yaml
+            group: DEFAULT_GROUP
+#          - data-id: config-redis.yaml
+#            group: DEFAULT_GROUP
+#          - data-id: config-mongo.yaml
+#            group: DEFAULT_GROUP
+#          - data-id: config-warehouse-rocketmq.yaml
+#            group: DEFAULT_GROUP
+#          - data-id: config-warehouse-job.yaml
+#            group: DEFAULT_GROUP
+#          - data-id: config-warehouse.yaml
+#            group: DEFAULT_GROUP
+            refresh: true
+log:
+  level: debug
+  path: /Users/limr/logs/member/
+
